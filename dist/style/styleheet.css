@@ -1,0 +1,24 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+.project{
+    border:2px solid #CDCDCD;
+    margin: 10px;
+    padding-left: 5px;
+}
+
+.project img {
+    padding-top: 10px;
+    width: 30%;
+    height: 30%;
+}
+
+#arrow-back{
+    font-size: 30px;
+}
+
+.detail img {
+    padding-top: 10px;
+    width: 30%;
+    height: 30%;
+}
