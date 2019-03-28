@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("//Connect with a bluetooth device!\n// MAC Adress: b8:27:eb:95:73:91\nconsole.log('connection to Robot');\n\nif (navigator.bluetooth == 'undifined') {\n  alert('Scuk a dick');\n}\n\nvar RPI_GPIO_SERVICE_UUID = '6e400001-b5a3-f393-e0a9-e50e24dcca9e';\ndocument.querySelector('#search-bluetooth').addEventListener('pointerup', function (event) {\n  console.log('we are gonna search for bluetooth devices');\n  navigator.bluetooth.requestDevice({\n    filters: [{\n      services: [RPI_GPIO_SERVICE_UUID]\n    }]\n  }).then(function (device) {\n    console.log(device); //connect with server of device\n\n    return device.gatt.connect();\n  }).then(function (server) {\n    console.log(server);\n  }).catch(function (error) {\n    console.log(error);\n  }); // Call navigator.bluetooth.requestDevice\n});\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("//Connect with a bluetooth device!\n// MAC Adress: b8:27:eb:95:73:91\nconsole.log('connection to Robot');\n\nif (navigator.bluetooth == 'undifined') {\n  alert('Scuk a dick');\n}\n\nvar RPI_GPIO_SERVICE_UUID = '6e400001-b5a3-f393-e0a9-e50e24dcca9e';\ndocument.querySelector('#search-bluetooth').addEventListener('pointerup', function (event) {\n  console.log('we are gonna search for bluetooth devices');\n  navigator.bluetooth.requestDevice({\n    acceptAllDevices: true\n  }).then(function (device) {\n    console.log(device); //connect with server of device\n\n    return device.gatt.connect();\n  }).then(function (server) {\n    console.log(server);\n  }).catch(function (error) {\n    console.log(error);\n  }); // Call navigator.bluetooth.requestDevice\n});\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ })
 

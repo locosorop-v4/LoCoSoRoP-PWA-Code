@@ -8,11 +8,8 @@ var RPI_GPIO_SERVICE_UUID       = '6e400001-b5a3-f393-e0a9-e50e24dcca9e';
 
 document.querySelector('#search-bluetooth').addEventListener('pointerup', (event) => {
     console.log('we are gonna search for bluetooth devices');
-    navigator.bluetooth.requestDevice({
-        filters: [{
-            services: [RPI_GPIO_SERVICE_UUID]
-        }]
-    }).then(device => { 
+    navigator.bluetooth.requestDevice({ acceptAllDevices: true })
+        .then(device => { 
             console.log(device) 
             //connect with server of device
             return device.gatt.connect();
